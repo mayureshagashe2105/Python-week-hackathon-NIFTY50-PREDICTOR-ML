@@ -466,15 +466,14 @@ elif nav_choice == 'Predict':
         return arr
 
 
-    featureset = [prev, open1, highest, low, last, VWAP, vol, turnover, trades, del_vol, perc_del_vol]
-    featureset = np.array(featureset)
-
-    featureset = featureset_scale(featureset)
-
-    prediction = model.predict(featureset)
-    prediction = prediction * y_test_copy.std() + y_test_copy.mean()
-
     if submit:
+        featureset = [prev, open1, highest, low, last, VWAP, vol, turnover, trades, del_vol, perc_del_vol]
+        featureset = np.array(featureset)
+
+        featureset = featureset_scale(featureset)
+
+        prediction = model.predict(featureset)
+        prediction = prediction * y_test_copy.std() + y_test_copy.mean()
         load = st.progress(0)
         for i in range(100):
             time.sleep(0.00001)
