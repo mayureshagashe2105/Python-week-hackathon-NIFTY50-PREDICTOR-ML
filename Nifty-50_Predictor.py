@@ -442,6 +442,7 @@ elif nav_choice == 'Data Analysis':
         st.table(data1.corr())
 
 elif nav_choice == 'Predict':
+    st.markdown('Kindly hit ENTER after each entry')
     prev = st.number_input('Previous Month Closing')
     open1 = st.number_input('Opening Amount')
     highest = st.number_input('Highest Value of Month')
