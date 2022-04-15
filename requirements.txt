@@ -2,3 +2,4 @@ pandas==1.1.4
 matplotlib==3.3.2
 numpy==1.18.5
 streamlit==0.73.1
+click==8.0
